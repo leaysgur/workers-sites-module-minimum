@@ -1,8 +1,7 @@
 {
-  "main": "worker.js",
   "scripts": {
-    "dev": "miniflare -d -w -V -m -s public worker.js",
-    "build": "esbuild --bundle --format=esm ./src/index.js > worker.js"
+    "dev": "miniflare -d -w -V -m -s public ./dist/worker.mjs",
+    "build": "esbuild --bundle --format=esm --external:__STATIC_CONTENT_MANIFEST ./src/index.js > ./dist/worker.mjs"
   },
   "devDependencies": {
     "esbuild": "^0.14.5",
