@@ -1,0 +1,14 @@
+{
+  "main": "worker.js",
+  "scripts": {
+    "dev": "miniflare -d -w -V -m -s public worker.js",
+    "build": "esbuild --bundle --format=esm ./src/index.js > worker.js"
+  },
+  "devDependencies": {
+    "esbuild": "^0.14.5",
+    "miniflare": "^2.0.0-rc.3"
+  },
+  "dependencies": {
+    "@cloudflare/kv-asset-handler": "^0.2.0"
+  }
+}
