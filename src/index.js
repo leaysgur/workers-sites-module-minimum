@@ -21,15 +21,13 @@ export default {
     const options = {
       ASSET_NAMESPACE: env.__STATIC_CONTENT,
       ASSET_MANIFEST: assetManifest,
-      // cacheControl: {
-      //   bypassCache: true,
-      // },
     };
 
     try {
       const asset = await getAssetFromKV(
         {
           request,
+          // bind is required to ensure calling context!
           waitUntil: ctx.waitUntil.bind(ctx),
         },
         options
